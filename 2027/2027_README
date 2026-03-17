@@ -1,0 +1,84 @@
+# Édition 2027 — Présidentielle française
+
+> Partie du projet [Test de personnalité politique](../)
+
+---
+
+> ## 🚧 Version en cours de développement
+>
+> Cette édition est en préparation. Les programmes officiels de campagne ne sont pas encore publiés.
+> Les positions des candidats actuellement encodées sont **provisoires et simulées** à des fins de développement uniquement.
+> Elles ne reflètent **aucunement les positions réelles** des candidats listés.
+>
+> **Ne pas utiliser cette édition pour former ou orienter un jugement politique.**
+>
+> Les données seront mises à jour au fur et à mesure de la publication des programmes officiels, et finalisées une fois les candidatures officiellement déclarées.
+
+---
+
+## Présentation
+
+Test de personnalité politique pour l'**élection présidentielle française d'avril 2027**.
+
+| | |
+|---|---|
+| **Statut** | 🚧 En développement — données provisoires |
+| **Candidats (provisoires)** | 8 candidats pressentis |
+| **Questions** | 62 (identiques à l'édition 2022) |
+| **Positions encodées** | ⚠️ Simulation — en attente des programmes officiels |
+
+---
+
+## Candidats actuellement listés (provisoires)
+
+> Cette liste est indicative. Elle sera mise à jour en fonction des candidatures officiellement déclarées.
+
+| Candidat | Parti | Statut de l'encodage |
+|----------|-------|----------------------|
+| Gabriel Attal | Renaissance / Ensemble | ⚠️ Simulation |
+| Édouard Philippe | Horizons | ⚠️ Simulation |
+| Marine Le Pen | Rassemblement National | ⚠️ Simulation |
+| Jean-Luc Mélenchon | La France Insoumise | ⚠️ Simulation |
+| François Ruffin | Gauche indépendante | ⚠️ Simulation |
+| Marine Tondelier | EELV | ⚠️ Simulation |
+| Éric Ciotti | Droite souverainiste | ⚠️ Simulation |
+| Éric Zemmour | Reconquête | ⚠️ Simulation |
+
+---
+
+## Feuille de route
+
+- [x] Structure technique (questions, algorithme, interface) — identique à 2022
+- [x] Liste provisoire des candidats pressentis
+- [ ] Déclarations officielles de candidature
+- [ ] Publication des programmes officiels de campagne
+- [ ] Encodage des positions à partir des programmes
+- [ ] Relecture contradictoire des positions
+- [ ] Suppression de la bannière de simulation
+- [ ] Publication de l'édition définitive
+
+---
+
+## Contribuer à cette édition
+
+Vous pouvez contribuer à la préparation de l'édition 2027 de plusieurs façons :
+
+- **Signaler une candidature** manquante ou incorrecte → Issue `[données-2027]`
+- **Proposer des questions** pertinentes pour 2027 → Issue `[nouvelle-édition]`
+- **Encoder les positions** d'un candidat à partir de son programme officiel → PR avec label `[données-2027]` et sources pour chaque position
+
+Lisez [`CONTRIBUTING.md`](../CONTRIBUTING.md) avant de soumettre.
+
+**Règle absolue :** les positions encodées doivent être basées sur des programmes ou déclarations officiels, pas sur des suppositions ou des positionnements idéologiques généraux.
+
+---
+
+## Utilisation
+
+```bash
+open 2027/index.html
+```
+
+---
+
+*Édition en cours de développement — les données ne sont pas représentatives des positions réelles des candidats.*
