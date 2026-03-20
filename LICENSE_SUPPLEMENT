@@ -1,0 +1,197 @@
+LICENSE SUPPLEMENT — Test de personnalité politique
+===================================================
+
+Ce fichier s'applique à l'ensemble du dépôt et à toutes ses
+éditions (2022, 2027, etc.).
+
+Il complète la licence principale :
+  GNU Affero General Public License v3.0 (AGPL-3.0)
+  https://www.gnu.org/licenses/agpl-3.0.fr.html
+
+Les restrictions ci-dessous sont ajoutées conformément à
+l'article 7 de l'AGPL-3.0 qui permet expressément l'ajout
+de restrictions supplémentaires.
+
+---
+
+RAPPEL AGPL-3.0
+---------------
+
+L'AGPL-3.0 garantit : utiliser, copier, modifier, distribuer.
+Elle impose : publier le code source de toute version modifiée
+déployée comme service accessible sur un réseau, même sans
+distribution de binaire (fermeture de la « faille SaaS »).
+
+---
+
+1. INTERDICTIONS D'USAGE COMMERCIAL
+-------------------------------------
+
+L'AGPL-3.0 autorise par défaut les usages commerciaux.
+Ce supplément les interdit dans les cas suivants :
+
+1.1 INTERDITS
+
+  a) Intégration dans une page ou interface affichant
+     de la publicité (Google Ads, bannières, etc.),
+     même si le test lui-même est proposé gratuitement.
+
+  b) Présence de liens d'affiliation ou de parrainage
+     en relation avec le test ou ses résultats.
+
+  c) Utilisation du test comme outil de génération de leads,
+     de profilage ou de ciblage à des fins commerciales
+     ou publicitaires.
+
+  d) Intégration dans un produit ou service vendu à des tiers
+     (abonnement, SaaS, API commerciale, white-label, etc.).
+
+  e) Utilisation par un parti politique, organisation militante,
+     groupe de pression ou équipe de campagne électorale,
+     avec ou sans paiement.
+
+  f) Utilisation par une agence de communication politique
+     ou de conseil en stratégie électorale.
+
+1.2 AUTORISÉS
+
+  a) Site d'information ou d'éducation civique sans publicité,
+     avec attribution visible.
+
+  b) Cadre scolaire, universitaire ou formation citoyenne,
+     sans contrepartie financière.
+
+  c) Blog personnel ou associatif sans publicité ni monétisation.
+
+  d) Portail d'information public (collectivité, institution)
+     sans publicité, avec attribution et respect du protocole
+     éditorial (CONTRIBUTING.md).
+
+  e) Journalisme d'intérêt public sans publicité sur la page
+     du test, avec attribution et sans modification des données.
+
+1.3 CAS AMBIGUS
+
+  Ouvrir une Issue GitHub avec le label [licence] avant
+  toute utilisation dont la qualification est incertaine.
+
+---
+
+2. NEUTRALITÉ POLITIQUE — TOUTES ÉDITIONS
+-------------------------------------------
+
+Toute réutilisation ou adaptation de ce projet, pour toute
+édition (2022, 2027, etc.), est soumise aux conditions
+suivantes :
+
+  Le projet et ses dérivés ne peuvent pas être utilisés pour
+  favoriser ou défavoriser un parti politique, un candidat,
+  une liste électorale ou une organisation politique, notamment :
+
+  a) Par la modification des positions encodées des candidats
+     sans source vérifiable, ou de façon asymétrique entre
+     les camps.
+
+  b) Par la modification de l'algorithme de façon à amplifier
+     ou réduire les scores de candidats spécifiques.
+
+  c) Par la sélection ou la suppression de questions visant
+     à biaiser systématiquement les résultats vers une
+     orientation politique particulière.
+
+  d) Par l'adjonction de contenu éditorial orienté autour
+     du test (commentaires, encarts, mise en scène des
+     résultats).
+
+  Toute violation constatée entraîne la révocation des droits
+  accordés par cette licence, conformément à l'article 8
+  de l'AGPL-3.0.
+
+---
+
+3. DONNÉES PERSONNELLES — INTERDICTION ABSOLUE
+------------------------------------------------
+
+Ce projet est conçu pour ne traiter aucune donnée personnelle.
+Les opinions politiques constituent des données sensibles au
+sens de l'article 9 du RGPD.
+
+Toute réutilisation ou adaptation est soumise à la condition
+suivante :
+
+  Aucune version déployée ne peut introduire de mécanisme
+  de collecte, stockage ou transmission des réponses des
+  utilisateurs ou de toute donnée personnelle les concernant :
+
+  - Cookies, localStorage, sessionStorage.
+  - Analytics (Google Analytics, Matomo, ou tout équivalent).
+  - Transmission des réponses vers un serveur.
+  - Fingerprinting ou toute identification de l'utilisateur.
+  - Publicité comportementale ou contextuelle.
+
+  Cette condition s'applique même si la collecte est
+  consentie et déclarée au titre du RGPD.
+
+  Note pour les déployeurs : si vous ajoutez des mécanismes
+  de collecte dans votre propre instance, vous devenez
+  responsable de traitement au sens du RGPD et êtes soumis
+  à vos obligations légales. Cela n'est pas autorisé par
+  ce supplément.
+
+---
+
+4. ATTRIBUTION RENFORCÉE
+-------------------------
+
+En complément de l'article 4 de l'AGPL-3.0, toute
+réutilisation doit inclure dans l'interface utilisateur
+(pas seulement dans le code source) :
+
+  a) La mention : "Basé sur le projet Test de personnalité
+     politique (AGPL-3.0)" avec lien vers le dépôt GitHub.
+
+  b) L'indication de l'édition utilisée (2022, 2027, etc.).
+
+  c) Une indication des modifications apportées, si applicable.
+
+  d) La mention que le projet original est indépendant et
+     sans affiliation politique.
+
+---
+
+5. LIMITATION DE RESPONSABILITÉ
+---------------------------------
+
+Les positions encodées des candidats sont établies à partir
+de leurs programmes officiels de campagne. Elles peuvent
+comporter des erreurs d'interprétation et ne constituent
+pas une vérité officielle, un avis juridique ni une
+recommandation de vote.
+
+Les auteurs déclinent toute responsabilité quant aux
+décisions de vote prises sur la base des résultats de ce test.
+
+---
+
+6. HIÉRARCHIE DES TEXTES
+--------------------------
+
+En cas de conflit entre ce supplément et l'AGPL-3.0 :
+  - Droits de copie, distribution et accès au code source :
+    l'AGPL-3.0 s'applique.
+  - Usage commercial, neutralité politique, données personnelles :
+    ce supplément s'applique (restrictions ajoutées conformément
+    à l'article 7 de l'AGPL-3.0).
+
+---
+
+7. CONTACT
+-----------
+
+Pour toute question relative à cette licence :
+  Ouvrir une Issue GitHub avec le label [licence].
+
+---
+
+Projet : Test de personnalité politique (toutes éditions)
+Date : 2025 — Version 1.0

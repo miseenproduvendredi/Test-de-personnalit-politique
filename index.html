@@ -1,0 +1,216 @@
+<!--
+  Test de personnalité politique — Page d'accueil
+  Copyright (C) 2025 @miseenproduvendredi
+  Ce programme est distribué sous GNU Affero General Public License v3.0
+  https://www.gnu.org/licenses/agpl-3.0.fr.html
+  Des restrictions supplémentaires s'appliquent :
+  usage commercial, neutralité politique, données personnelles
+  → voir LICENSE_SUPPLEMENT.txt à la racine du dépôt
+-->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 3 2'%3E%3Crect width='1' height='2' fill='%23002395'/%3E%3Crect x='1' width='1' height='2' fill='%23fff'/%3E%3Crect x='2' width='1' height='2' fill='%23ED2939'/%3E%3C/svg%3E">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Test de personnalité politique</title>
+<style>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#f0f4fb;--card:#fff;--t1:#0f1f3d;--t2:#1e3560;--t3:#4a6080;--t4:#8a9ab8;
+  --pri:#2563eb;--priL:#eff6ff;--priB:#bfdbfe;--cb:#d0daea;
+  --shadow:0 2px 12px rgba(37,99,235,.10),0 0 0 1px rgba(37,99,235,.08);
+  --shadow-hover:0 8px 32px rgba(37,99,235,.18),0 0 0 1.5px rgba(37,99,235,.18);
+}
+html,body{background:var(--bg);min-height:100%;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif}
+body{display:flex;flex-direction:column;min-height:100vh}
+header{padding:2.5rem 1rem 1.5rem;text-align:center}
+.flag{font-size:32px;margin-bottom:14px;display:block}
+h1{font-size:clamp(22px,5vw,32px);font-weight:700;color:var(--t1);font-family:Georgia,serif;line-height:1.2;margin-bottom:10px}
+.sub{font-size:15px;color:var(--t3);line-height:1.6;max-width:480px;margin:0 auto}
+main{flex:1;padding:0 1.25rem 2rem}
+.wrap{max-width:600px;margin:0 auto}
+
+/* Featured cards */
+.grid-main{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-bottom:16px}
+.btn{display:flex;flex-direction:column;background:var(--card);border:1.5px solid var(--cb);border-radius:18px;padding:24px 22px;text-decoration:none;color:inherit;box-shadow:var(--shadow);transition:transform .15s,box-shadow .15s,border-color .15s}
+.btn:hover{transform:translateY(-4px);box-shadow:var(--shadow-hover);border-color:var(--pri)}
+.btn.active{border-color:var(--pri);border-width:2px}
+.btn.dim{opacity:.65}
+.btn-year{font-size:48px;font-weight:800;color:var(--pri);font-family:Georgia,serif;line-height:1;margin-bottom:8px}
+.btn-title{font-size:17px;font-weight:700;color:var(--t1);margin-bottom:5px}
+.btn-desc{font-size:13px;color:var(--t3);line-height:1.55;margin-bottom:14px;flex:1}
+.btn-tags{display:flex;flex-wrap:wrap;gap:5px}
+.tag{font-size:11px;font-weight:600;padding:3px 10px;border-radius:20px;background:var(--priL);color:var(--pri);border:.5px solid var(--priB)}
+.tag.sim{background:#fff3cd;color:#856404;border-color:#ffc107}
+.btn-cta{margin-top:16px;padding:10px 0;background:var(--pri);color:#fff;border-radius:9px;font-size:14px;font-weight:600;text-align:center;transition:background .12s}
+.btn:hover .btn-cta{background:#1d4ed8}
+.btn.dim .btn-cta{background:var(--t4)}
+
+/* Section label */
+.slabel{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--t4);margin:20px 0 10px}
+
+/* Historical compact grid */
+.grid-hist{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:9px;margin-bottom:8px}
+.hbtn{display:flex;flex-direction:column;align-items:center;justify-content:center;background:var(--card);border:1px solid var(--cb);border-radius:11px;padding:12px 8px;text-decoration:none;color:inherit;box-shadow:0 1px 4px rgba(37,99,235,.05);transition:transform .12s,box-shadow .12s,border-color .12s;text-align:center}
+.hbtn:hover{transform:translateY(-2px);box-shadow:var(--shadow);border-color:var(--pri)}
+.hbtn.dim{opacity:.5;cursor:default;pointer-events:none}
+.hbtn.avail{border-color:var(--priB)}
+.hy{font-size:20px;font-weight:800;color:var(--pri);font-family:Georgia,serif;line-height:1;margin-bottom:3px}
+.hc{font-size:10px;color:var(--t4);margin-bottom:5px}
+.htag{font-size:10px;font-weight:600;padding:2px 7px;border-radius:7px;background:var(--priL);color:var(--pri);border:.5px solid var(--priB)}
+.htag.soon{background:#f1f5f9;color:var(--t4);border-color:var(--cb)}
+
+/* Civic */
+.civic{background:var(--card);border-left:4px solid var(--pri);border-radius:0 14px 14px 0;padding:20px 22px;box-shadow:var(--shadow);margin-bottom:20px}
+.civic p{font-size:14px;line-height:1.7;color:var(--t2);text-align:justify;margin-bottom:10px}
+.civic p:last-child{margin-bottom:0}
+
+/* FAQ accordion */
+.faq{margin-bottom:8px;background:var(--card);border:1px solid var(--cb);border-radius:12px;overflow:hidden;box-shadow:0 1px 4px rgba(37,99,235,.04)}
+.faq-btn{width:100%;text-align:left;background:none;border:none;padding:14px 16px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:inherit;font-size:14px;font-weight:600;color:var(--t1);transition:background .1s;gap:8px}
+.faq-btn:hover{background:var(--priL)}
+.faq-arrow{font-size:11px;color:var(--t4);transition:transform .2s;flex-shrink:0}
+.faq-btn.open .faq-arrow{transform:rotate(180deg)}
+.faq-body{display:none;padding:0 16px 16px;border-top:1px solid var(--cb)}
+.faq-body.open{display:block}
+.faq-body p{font-size:13.5px;line-height:1.75;color:var(--t2);margin-bottom:9px;text-align:justify}
+.faq-body p:last-child{margin-bottom:0}
+.faq-body ul{padding-left:18px;margin-bottom:9px}
+.faq-body li{font-size:13.5px;line-height:1.7;color:var(--t2);margin-bottom:5px}
+.faq-body code{font-family:"SFMono-Regular","Fira Code",monospace;font-size:12px;background:#f1f5f9;border:.5px solid var(--cb);padding:1px 5px;border-radius:4px;color:var(--t1)}
+.bias-box{background:var(--priL);border:.5px solid var(--priB);border-radius:9px;padding:12px 14px;margin-bottom:10px}
+.bias-box:last-child{margin-bottom:0}
+.bias-title{font-size:13px;font-weight:700;color:var(--pri);margin-bottom:7px}
+
+/* Anon + footer */
+.anon{display:inline-flex;align-items:center;gap:6px;padding:5px 13px;border-radius:20px;background:var(--priL);border:.5px solid var(--priB);font-size:12px;color:var(--pri);font-weight:600;margin-bottom:10px}
+footer{padding:1.25rem 1rem 1.5rem;text-align:center;font-size:12px;color:var(--t4);line-height:1.7;border-top:1px solid var(--cb)}
+footer a{color:var(--pri);text-decoration:none}
+footer a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+
+<header>
+  <span class="flag">🇫🇷</span>
+  <h1>Test de personnalité politique</h1>
+  <p class="sub">Comparez vos opinions aux programmes des candidats à l'élection présidentielle française. Indépendant, anonyme, open source.</p>
+</header>
+
+<main><div class="wrap">
+
+  <!-- ── Éditions actuelles ─────────────────────── -->
+  <div class="grid-main">
+
+    <a class="btn active" href="2022/index.html">
+      <div class="btn-year">2022</div>
+      <div class="btn-title">Présidentielle 2022</div>
+      <div class="btn-desc">62 questions · 12 candidats · Programmes officiels sourcés · Filtre Décisif avec analyse des paradoxes</div>
+      <div class="btn-tags">
+        <span class="tag">✅ Disponible</span>
+        <span class="tag">12 candidats</span>
+        <span class="tag">62 questions</span>
+      </div>
+      <div class="btn-cta">Commencer →</div>
+    </a>
+
+    <a class="btn dim" href="2027/index.html">
+      <div class="btn-year">2027</div>
+      <div class="btn-title">Présidentielle 2027</div>
+      <div class="btn-desc">Structure prête · Positions des candidats en attente des programmes officiels de campagne</div>
+      <div class="btn-tags">
+        <span class="tag sim">🚧 Simulation</span>
+        <span class="tag">En préparation</span>
+      </div>
+      <div class="btn-cta">Aperçu →</div>
+    </a>
+
+  </div>
+
+  <!-- ── Éditions historiques ───────────────────── -->
+  <div class="slabel">Éditions historiques</div>
+  <div class="grid-hist">
+
+    <a class="hbtn avail" href="2017/index.html">
+      <div class="hy">2017</div>
+      <div class="hc">11 candidats</div>
+      <span class="htag">✅ Dispo</span>
+    </a>
+
+  </div>
+
+  <!-- ── Civic ─────────────────────────────────── -->
+  <div class="civic">
+    <p style="font-size:16px;font-weight:700;color:var(--t1);margin-bottom:13px">🇫🇷 Voter est un devoir civique — et un devoir de se renseigner soi-même</p>
+    <p>Dans une démocratie, votre opinion vous appartient. Mais elle se construit — elle ne s'impose pas.</p>
+    <p>Recevoir une information de manière orientée — via un réseau social, un média partial, ou même un proche convaincu — influence votre avis <em>avant même que vous ayez eu le temps de le former vous-même</em>. C'est un phénomène documenté en psychologie : la première version d'un fait que nous entendons colore durablement notre jugement. L'amorçage cognitif et les biais de confirmation font le reste.</p>
+    <p>Ce test présente chaque position de manière équilibrée, sans jugement et sans orientation. Il ne vous dit pas pour qui voter. Il vous aide à <strong>comprendre les programmes</strong> et à identifier vos propres convictions.</p>
+    <p>La République française repose sur des valeurs fondamentales : <strong>Liberté, Égalité, Fraternité</strong>. La démocratie représentative n'a de sens que si chacun participe. <strong>S'abstenir, c'est laisser les autres décider à votre place.</strong> Voter sans se renseigner, c'est déléguer son jugement à ceux qui ont parlé le plus fort.</p>
+    <p>Ce test est un premier pas. Lisez plusieurs sources, confrontez les arguments, questionnez les certitudes. Le travail de citoyen commence avant le bureau de vote.</p>
+  </div>
+
+  <!-- ── FAQ ───────────────────────────────────── -->
+  <div class="slabel" style="margin-top:4px">Transparence &amp; méthodologie</div>
+
+  <div class="faq">
+    <button class="faq-btn" onclick="toggle(this)">
+      Pourquoi le test ne couvre-t-il pas l'intégralité des programmes ?
+      <span class="faq-arrow">▼</span>
+    </button>
+    <div class="faq-body">
+      <p>Les 62 questions couvrent les <strong>grands axes programmatiques</strong> — les positions sur lesquelles les candidats se distinguent clairement et qui sont bien documentées. Mais les programmes présidentiels font en moyenne <strong>80 à 150 pages chacun</strong>. Une couverture vraiment exhaustive représenterait plutôt 150 à 200 questions.</p>
+      <p>Ce choix éditorial vise l'équilibre entre exhaustivité et faisabilité pour l'utilisateur. Deux raisons pratiques expliquent la limite :</p>
+      <ul>
+        <li><strong>Abandon :</strong> Au-delà de 45 minutes, le taux de complétion chute fortement. 62 questions prennent déjà environ 20 minutes — ajouter davantage réduirait le nombre de personnes qui vont au bout, et donc l'utilité du test.</li>
+        <li><strong>Encodage :</strong> Chaque question nécessite d'encoder les positions de tous les candidats, de les sourcer individuellement et de les relire de façon contradictoire. 200 questions × 12 candidats = 2 400 positions à documenter et vérifier — un travail considérable.</li>
+      </ul>
+      <p>Ce qui n'est pas couvert comprend notamment : la fiscalité sectorielle fine, la politique étrangère détaillée, la réforme pénale de fond, la politique numérique avancée (IA, souveraineté des données), la santé mentale, l'enseignement supérieur, ou le financement des partis. Ce test est un point de départ, pas un panorama exhaustif.</p>
+    </div>
+  </div>
+
+  <div class="faq">
+    <button class="faq-btn" onclick="toggle(this)">
+      Quels sont les micro-biais mathématiques du test ?
+      <span class="faq-arrow">▼</span>
+    </button>
+    <div class="faq-body">
+      <p>Deux effets de bord sont inhérents à l'algorithme. Ils ne constituent pas des bugs — mais il est utile de les connaître si vous souhaitez interpréter finement les résultats.</p>
+
+      <div class="bias-box">
+        <div class="bias-title">A. La "prime au flou" — le score <code>0</code></div>
+        <p>Lorsqu'un candidat n'a pas de position claire sur un sujet (encodé à <code>0</code>), sa compatibilité avec un utilisateur votant <code>+2</code> (Totalement d'accord) est mécaniquement de <strong>50 %</strong> : <code>1 − |2 − 0| / 4 = 0,50</code>.</p>
+        <p><strong>L'effet :</strong> Un candidat aux positions floues ou centristes (beaucoup de <code>0</code>) obtiendra une compatibilité d'environ 50 % avec tout le monde — ni très proche ni très éloigné. Cela favorise légèrement les candidats aux programmes vagues sur les sujets clivants.</p>
+        <p><strong>Sur le Filtre Décisif :</strong> Le critère d'élimination est <code>(vote &gt; 0 ET position &lt; 0) OU (vote &lt; 0 ET position &gt; 0)</code>. Un candidat à <code>0</code> survit à toute ligne rouge sur ce sujet — son absence de position n'est pas une opposition. C'est logique, mais cela signifie que les positions non tranchées protègent du filtre.</p>
+        <div style="background:#fff3cd;border:.5px solid #ffc107;border-radius:7px;padding:10px 12px;margin-top:6px">
+          <strong style="font-size:12.5px;color:#856404">⚠️ "Sans opinion" n'est pas un skip</strong>
+          <p style="font-size:12.5px;color:#856404;margin-top:4px;line-height:1.6;margin-bottom:0">Répondre "Sans opinion" assigne la valeur <code>0</code> à votre vote, ce qui <strong>tire le score vers 50 %</strong> sur cette question. Si vous ne connaissez pas un sujet, utilisez <strong>❓ Je ne connais pas ce sujet</strong> — la question est alors totalement exclue du calcul, sans biaiser le résultat.</p>
+        </div>
+      </div>
+
+      <div class="bias-box">
+        <div class="bias-title">B. Les coordonnées de la boussole politique</div>
+        <p>La position de l'<strong>utilisateur</strong> sur la boussole est calculée dynamiquement à partir de ses réponses (somme pondérée sur les axes gauche/droite et progressiste/conservateur). En revanche, la position des <strong>candidats</strong> sur la boussole est codée en dur, c'est une estimation.</p>
+        <p>Cela signifie que si l'on calculait la position d'un candidat en passant ses réponses encodées dans le même algorithme, elle ne correspondrait pas nécessairement exactement aux coordonnées affichées. C'est une pratique standard — les politologues placent généralement les partis de façon absolue sur ces axes — mais la boussole doit être lue comme une <strong>représentation orientée</strong>, non comme un résultat de calcul pur.</p>
+      </div>
+    </div>
+  </div>
+
+</div></main>
+
+<footer>
+  <div class="anon">🔒 Anonymat total — aucune donnée transmise</div><br>
+  Projet citoyen indépendant · Liberté, Égalité, Fraternité<br>
+  <a href="https://github.com/miseenproduvendredi/Test-de-personnalite-politique" target="_blank">↗ Code source (GitHub)</a> ·
+  <a href="https://github.com/miseenproduvendredi/Test-de-personnalite-politique/blob/main/README.md" target="_blank">Documentation</a>
+</footer>
+
+<script>
+function toggle(btn){
+  btn.classList.toggle('open');
+  btn.nextElementSibling.classList.toggle('open');
+}
+</script>
+</body>
+</html>

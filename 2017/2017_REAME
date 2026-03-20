@@ -1,0 +1,52 @@
+# Édition 2017 — Présidentielle française
+
+> Partie du projet [Test de personnalité politique](../)
+
+---
+
+## Présentation
+
+Test de personnalité politique pour l'**élection présidentielle française d'avril 2017** (1er tour).
+
+| | |
+|---|---|
+| **Statut** | ✅ Disponible |
+| **Candidats** | 11 (1er tour) |
+| **Questions** | 62 sur 13 thèmes |
+| **Données** | Programmes officiels de campagne 2017 |
+
+---
+
+## Candidats
+
+| Candidat | Parti |
+|----------|-------|
+| Emmanuel Macron | En Marche ! |
+| Marine Le Pen | Front National |
+| François Fillon | Les Républicains |
+| Jean-Luc Mélenchon | La France Insoumise |
+| Benoît Hamon | Parti Socialiste |
+| Nicolas Dupont-Aignan | Debout la France |
+| Jean Lassalle | Résistons ! |
+| Philippe Poutou | NPA |
+| François Asselineau | UPR |
+| Nathalie Arthaud | Lutte Ouvrière |
+| Jacques Cheminade | Solidarité et Progrès |
+
+---
+
+## Note sur les questions anachroniques
+
+Certaines questions portent sur des sujets devenus loi après 2017 :
+- **PMA pour toutes** → légalisée en 2021 (positions 2017 = engagements de campagne)
+- **Euthanasie** → la loi Claeys-Leonetti date de 2016 (le débat était déjà ouvert)
+- **Avortement dans la Constitution** → inscrit en 2024 (positions 2017 = engagement de campagne)
+- **EDF renationalisation** → 2022 (positions 2017 = intention programmatique)
+
+Les positions encodées reflètent les engagements officiels des candidats en 2017, pas leur position actuelle.
+
+---
+
+## Signaler une erreur
+
+Issue GitHub avec le label `[données-2017]`, la question concernée et la source vérifiable.
