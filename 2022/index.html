@@ -402,7 +402,7 @@ function lQ(){aQ=QQ.filter(q=>selTh.has(q.th));ph='intro';R();}
 
 function rQuiz(){
   const q=aQ[ci],a=ans[q.id],isFlt=mode==='filter',isLast=ci===aQ.length-1;
-  const pct=Math.round(ci/aQ.length*100);
+  const pct=(isLast&&a!==undefined)?100:Math.round(ci/aQ.length*100);
   const sc=v=>{if(a===v)return v===-2?'sn2':v===-1?'sn1':v===0?'s0':v===1?'s1':'s2';return '';};
   const isDet=detOpen.has(q.id);
   const ce=getElim(),ec=Object.keys(ce).length;
