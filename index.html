@@ -53,7 +53,7 @@ main{flex:1;padding:0 1.25rem 2rem}
 
 /* Historical compact grid */
 .grid-hist{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:9px;margin-bottom:8px}
-.hbtn{display:flex;flex-direction:column;align-items:center;justify-content:center;background:var(--card);border:1px solid var(--cb);border-radius:11px;padding:12px 8px;text-decoration:none;color:inherit;box-shadow:0 1px 4px rgba(37,99,235,.05);transition:transform .12s,box-shadow .12s,border-color .12s;text-align:center}
+.hbtn{display:flex;flex-direction:column;align-items:center;justify-content:center;background:var(--card);border:1px solid var(--cb);border-radius:11px;padding:12px 8px;text-decoration:none;color:inherit;box-shadow:0 1px 4px rgba(37,99,235,.05);transition:transform .12s,box-shadow .12s,border-color .12px;text-align:center}
 .hbtn:hover{transform:translateY(-2px);box-shadow:var(--shadow);border-color:var(--pri)}
 .hbtn.dim{opacity:.5;cursor:default;pointer-events:none}
 .hbtn.avail{border-color:var(--priB)}
@@ -194,6 +194,19 @@ footer a:hover{text-decoration:underline}
         <p>La position de l'<strong>utilisateur</strong> sur la boussole est calculée dynamiquement à partir de ses réponses (somme pondérée sur les axes gauche/droite et progressiste/conservateur). En revanche, la position des <strong>candidats</strong> sur la boussole est codée en dur, c'est une estimation.</p>
         <p>Cela signifie que si l'on calculait la position d'un candidat en passant ses réponses encodées dans le même algorithme, elle ne correspondrait pas nécessairement exactement aux coordonnées affichées. C'est une pratique standard — les politologues placent généralement les partis de façon absolue sur ces axes — mais la boussole doit être lue comme une <strong>représentation orientée</strong>, non comme un résultat de calcul pur.</p>
       </div>
+    </div>
+  </div>
+
+  <div class="faq">
+    <button class="faq-btn" onclick="toggle(this)">
+      Les données du test sont-elles collectées ?
+      <span class="faq-arrow">▼</span>
+    </button>
+    <div class="faq-body">
+      <p><strong>Non. Aucune donnée n'est collectée, transmise ou stockée.</strong></p>
+      <p>Le test fonctionne entièrement dans votre navigateur. Vos réponses ne quittent jamais votre appareil : il n'y a ni serveur qui les reçoit, ni base de données qui les enregistre, ni cookie de traçage, ni analytique tiers.</p>
+      <p>Techniquement, la page est un fichier HTML/JavaScript autonome : tout le calcul se fait côté client, en mémoire vive. Dès que vous fermez l'onglet, tout disparaît. Vous pouvez le vérifier vous-même en consultant le code source — disponible intégralement sur <a href="https://github.com/miseenproduvendredi/Test-de-personnalite-politique" target="_blank">GitHub</a>.</p>
+      <p>Ce choix est délibéré : vos opinions politiques vous appartiennent, et elles n'ont pas à être connues d'un tiers — même anonymisées.</p>
     </div>
   </div>
 
